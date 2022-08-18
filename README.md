@@ -1,4 +1,5 @@
 # 2. Answers
+
 ### 1. Indicate which are the parts of the following url:
 - `https://` : _squema_
 - `backend.mega-app.com.co :` _host_
@@ -10,20 +11,20 @@
 
 ### 2. Define
 ##### - Web API
-Es una interfaz que contiene y es creada a partir de funciones que le permiten al programador obtener algún _feature_ o _dato_ de alguna app.
+An interface that contains (is made of) fuctions that allows the programmers to manipulate _data_ or _features_ from differents apps.
 
 ##### - Restful
-Así como se podría decir que Web API es la arquitectura, RESTful es la aplicación de esa arquitectura.
+As well as we can say that _web api_ is the architecture, _RESTful_ is the aplication of that architecture.
 
 #### - statusCode:
-- `200`: _Respuesta satisfactoria. OK_
-- `300`: _Redireccionamiento_
-- `400`: _Error del Cliente_
-- `500`: _Error del servidor_
+- `200`: _succesful_
+- `300`: _redirection_
+- `400`: _client error_
+- `500`: _server error_
 
-Plus: `100`: _Respuesta informativa_
+Plus: `100`: _informational_
 ### 3. CRUD
-Es el modulo de una app encargada de la creación, lectura, actualización y borrado de elemntos en la base de datos (también se aplica al front para poder hacer los llamados a la API); En el back se puede dividir en dos, "services" y "controllers" donde ambos son CRUDs con responsabilidades específicas.
+The module in an app in charge of creation, reading, updating & deleting elements from DB, is also used in Front-End to make the calls to the API; In Back it could be divided in to parts: _services_ and _controllers_ in which both are CRUD but each one has an specyfic responsability.
 
-El anagrama quiere decir:
+The anagram means:
 `Create` - `Read` - `Update` - `Delete`
