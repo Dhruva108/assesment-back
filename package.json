@@ -4,7 +4,8 @@
   "description": "### 1. Indicate which are the parts of the following url: - `https://` : _squema_ - `backend.mega-app.com.co :` _host_ - `8080/` : _port_ - `api/articles/search` : _path_ - `?docid=1020&hl=en` : _query string_ - `#dayone` : _fragment_",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js",
+    "dev": "nodemon index.js"
   },
   "repository": {
     "type": "git",
