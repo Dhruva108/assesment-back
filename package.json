@@ -16,5 +16,18 @@
   "bugs": {
     "url": "https://github.com/Dhruva108/assesment-back/issues"
   },
-  "homepage": "https://github.com/Dhruva108/assesment-back#readme"
+  "homepage": "https://github.com/Dhruva108/assesment-back#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "dotenv": "^16.0.1",
+    "expres": "^0.0.5",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.5.2"
+  },
+  "devDependencies": {
+    "eslint": "^8.22.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "nodemon": "^2.0.19"
+  }
 }
