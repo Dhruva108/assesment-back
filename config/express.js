@@ -1,7 +1,7 @@
 const express = require('express');
 
-function configExpress(app) {
-  app.use(express.json());
+function configExpress(api) {
+  api.use(express.json());
 }
 
 module.exports = configExpress;
