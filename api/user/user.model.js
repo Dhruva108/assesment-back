@@ -25,6 +25,10 @@ const UserSchema = new mongoose.Schema({
     required: true,
     minlenght: 8,
   },
+  favoritesList: {
+    type: Array,
+    default: [],
+  },
   isActive: {
     type: Boolean,
     default: false,
@@ -49,7 +53,7 @@ UserSchema.pre('save', async function save(next) {
   const user = this;
 
   try {
-    if (!user.isModify('password')) {
+    if (!user.isModified('password')) {
       next();
     }
     const salt = await bcrypt.genSalt(10);

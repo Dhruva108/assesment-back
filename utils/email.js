@@ -21,4 +21,6 @@ async function sendNodemailer(data) {
   return info;
 }
 
-module.exports = sendNodemailer;
+module.exports = {
+  sendNodemailer,
+};
