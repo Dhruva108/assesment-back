@@ -4,15 +4,16 @@ const express = require('express');
 const expressConfig = require('./config/express');
 const databaseConfig = require('./config/database');
 const routes = require('./routes');
+const swagger = require('./config/swagger');
 
-const api = express();
-
+const app = express();
 const PORT = process.env.PORT || 8000;
 
-api.listen(PORT, async () => {
-  expressConfig(api);
+app.listen(PORT, async () => {
+  expressConfig(app);
   await databaseConfig();
-  routes(api);
+  routes(app);
+  swagger(app, PORT);
 
   console.log(`server running at http://localhost:${PORT}`);
 });
