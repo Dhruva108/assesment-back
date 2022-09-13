@@ -6,8 +6,8 @@ function createGmailTransporter() {
     port: process.env.SMTP_PORT,
     secure: true,
     auth: {
-      user: process.env.SMTP_USER, // generated ethereal user
-      pass: process.env.SMTP_PASSWORD, // generated ethereal password
+      user: process.env.SMTP_USER,
+      pass: process.env.SMTP_PASSWORD,
     },
   });
 
