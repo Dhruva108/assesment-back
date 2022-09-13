@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 const Router = require('express');
 const {
   getAllUsersHandler,
@@ -12,7 +13,7 @@ const router = Router();
 
 /**
  * @openapi
- * /api/users:
+ * /api/user:
  *  get:
  *   tags:
  *   - Users
@@ -37,7 +38,7 @@ const router = Router();
 router.get('/', getAllUsersHandler);
 /**
  * @openapi
- * /api/users:
+ * /api/user:
  *  post:
  *   tags:
  *   - Users
@@ -95,8 +96,95 @@ router.get('/', getAllUsersHandler);
  *         $ref: '#/components/schemas/error'
  */
 router.post('/', registerLogin, createUserHandler);
+/**
+ * @openapi
+ * /api/user/{id}:
+ *  get:
+ *   tags:
+ *   - User
+ *   description: Get a single user
+ *   summary: Get a single user by id
+ *   parameters:
+ *     - in: path
+ *       name: id
+ *       description: The id of the user
+ *       required: true
+ *   responses:
+ *    200:
+ *     description: The user found
+ *     content:
+ *      application/json:
+ *       schema:
+ *        $ref: '#/components/schemas/userResponse'
+ *    500:
+ *     description: Internal server error
+ *     content:
+ *      application/json:
+ *       schema:
+ *        $ref: '#/components/schemas/error'
+ */
 router.get('/:id', getSingleUserHandler);
+/**
+ * @openapi
+ * /api/user/{id}:
+ *  patch:
+ *   tags:
+ *   - Users
+ *   description: Update a single user
+ *   summary: Update a single user by id
+ *   parameters:
+ *    - in: path
+ *      name: id
+ *      description: The id of the user
+ *      required: true
+ *   requestBody:
+ *    required: true
+ *    content:
+ *     application/json:
+ *      schema:
+ *       type: object
+ *   responses:
+ *    200:
+ *     description: The user updated
+ *     content:
+ *      application/json:
+ *       schema:
+ *        $ref: '#/components/schemas/userResponse'
+ *    500:
+ *     description: Internal server error
+ *     content:
+ *      application/json:
+ *       schema:
+ *        $ref: '#/components/schemas/error'
+ */
 router.patch('/:id', updateUserHandler);
+/**
+ * @openapi
+ * /api/user/{id}:
+ *  delete:
+ *   tags:
+ *   - Users
+ *   description: Delete a single user
+ *   summary: Delete a single user by id
+ *   parameters:
+ *     - in: path
+ *       name: id
+ *       description: The id of the user
+ *       required: true
+ *   responses:
+ *    200:
+ *     description: The user deleted
+ *     content:
+ *      application/json:
+ *       schema:
+ *        $ref: '#/components/schemas/userResponse'
+ *    500:
+ *     description: Internal server error
+ *     content:
+ *      application/json:
+ *       schema:
+ *        $ref: '#/components/schemas/error'
+ */
 router.delete('/:id', deleteUserHandler);
 
 module.exports = router;
