@@ -44,12 +44,12 @@ async function createUserHandler(req, res) {
     userData.passwordResetExpires = Date.now() + 3_600_000 * 1;
     const user = await createUser(userData);
     const message = {
-      from: '"no-replay" <airbclone@gmail.com>',
+      from: '"no-replay" backend@assessment.camp',
       to: user.email,
-      subject: 'Activate your account',
+      subject: 'This is a Non-empty-mail',
       html: `
       <h1>Hello, ${user.name}</h1>
-      <a href="http://localhost:3000/verifyAccount/${hash}" target="_blank" rel="no referer"> <h3>Click me!</h3> </a>
+      <a href="http://github.com/Dhruva108" target="_blank" rel="no referer"> <h3>My Github</h3> </a>
       `,
     };
 
